@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <form asp-action="Processing" asp-controller="Checkout" method="post">
+
+        <h3 class="text-body">Your Payment has been successfully processed!</h3>
+        <br />
+        <br />
+        <p class="blockquote text-center">
+            The details of the transaction are  <br />
+            Customer : @ViewBag.Customer <br /> <br />
+            Amount : CAD$ @ViewBag.AmountPaid
+        </p>
+
+        
+    </form>
+    <br />
+
+    <div class="text-center">
+        <a class="btn btn-info" asp-controller="Products" asp-action="Index">Keep shopping...</a>
+    </div>
+
+
+
+</div>

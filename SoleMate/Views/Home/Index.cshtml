@@ -2,7 +2,78 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<section id="testimonials">
+
+    <h2 class="text-center mb-2">What our customers are saying</h2>
+    <br />
+
+    <div id="carouselExampleInterval" class="carousel slide container" data-bs-ride="carousel">
+
+        <div class="carousel-inner ps-0" align="center" >
+            <div class="carousel-item active col-md-4 testimonial-item align-items-center" data-bs-interval="10000">
+                <img class="testimonial-img mb-2" src="https://randomuser.me/api/portraits/women/25.jpg" alt="testimonial image">
+                <p class="testimonial-text text-wrap" style="width: 21rem;">I was amazed by the quality of the sneakers I ordered. They arrived quickly and fit perfectly. I will definitely be ordering again!</p>
+                <h4 class="testimonial-name">Jane Lankester</h4>
+                <p class="testimonial-city">London, ON</p>
+                <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>                   
+                </ul>
+            </div>
+
+            <div class="carousel-item col-md-4 testimonial-item justify-content-center" data-bs-interval="2000">
+                <img class="testimonial-img mb-2" src="https://randomuser.me/api/portraits/men/3.jpg" alt="testimonial image">
+                <p class="testimonial-texttext-wrap" style="width: 21rem;">The customer service I received was outstanding. They answered all of my questions and made sure I was satisfied with my purchase.</p>
+                <h4 class="testimonial-name"> Mr.Fashion</h4>
+                <p class="testimonial-city">Toronto, ON</p>
+                <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-half"></i></li>
+                </ul>
+            </div>
+            <div class="carousel-item col-md-4 testimonial-item justify-content-center" data-bs-interval="2000">
+                <img class="testimonial-img mb-2" src="https://randomuser.me/api/portraits/men/7.jpg" alt="testimonial image">
+                <p class="testimonial-texttext-wrap" style="width: 21rem;">The customer service I received was outstanding. They answered all of my questions and made sure I was satisfied with my purchase.</p>
+                <h4 class="testimonial-name">John Smith</h4>
+                <p class="testimonial-city">Toronto, ON</p>
+                <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-half"></i></li>
+                </ul>
+            </div>
+            <div class="carousel-item col-md-4 testimonial-item justify-content-center">
+                <img class="testimonial-img mb-2" src="https://randomuser.me/api/portraits/women/7.jpg" alt="testimonial image">
+                <p class="testimonial-texttext-wrap" style="width: 21rem;">The customer service I received was outstanding. They answered all of my questions and made sure I was satisfied with my purchase.</p>
+                <h4 class="testimonial-name">Emily Davis</h4>
+                <p class="testimonial-city">Mississauga, ON</p>
+                <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br /><br />
+</section>
+

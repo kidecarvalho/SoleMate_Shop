@@ -1,0 +1,24 @@
+﻿@model SmallCartViewModel
+
+@if (Model != null)
+{
+    <ul>
+        <li class="nav-item ms-auto">
+            <a class="btn btn-outline-secondary cart-bag-2" href="/Cart"><i class="bi bi-bag cart-bag"></i></a>
+        </li>
+    </ul>
+    <p>Items in cart: <span class="badge badge-primary">@Model.NumberOfItems</span></p>
+    <p>Total: <b>CAD @Model.TotalAmount.ToString("C2")</b></p>
+
+}
+else
+{
+    <ul>
+        <li class="nav-item ms-auto">
+            <a class="btn btn-outline-secondary cart-bag-2" href="/Cart"><i class="bi bi-bag cart-bag"></i></a>
+        </li>
+    </ul>
+    
+}
+
+

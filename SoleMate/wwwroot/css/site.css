@@ -12,7 +12,68 @@ html {
   position: relative;
   min-height: 100%;
 }
+.body-height {
+    height: 100vh;
+}
 
-body {
-  margin-bottom: 60px;
+.products-categories:hover {
+    background-color: cadetblue;
+    text-decoration-color: white;
+}
+
+.link-dark {
+    color: #212529;
+}
+
+.solemate-logo{
+    width:80px;
+}
+.hdr-Headlines {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.stripeDashboard-icon{
+    width:150px;
+}
+.cart-bag,
+.social-media {
+    font-size: 1.5rem;
+}
+
+.social-media:hover {
+    color:darkblue
+}
+
+.testimonial-img{
+    border-radius:50%;
+}
+
+.cart-bag-2{
+    font-size: 0.5rem;
+}
+
+.newsletter-section {
+    background: rgb(62,61,97);
+    background: linear-gradient(90deg, rgba(62,61,97,1) 0%, rgba(238,193,10,1) 100%, rgba(0,212,255,1) 100%);
+    width: 100%; /* fallback */
+    width: 100vw;
+}
+
+.shopping-bag {
+    width: 100px;
+    height: 39px;
+    
+}
+.cart-bagOK {
+    left: 40px;
+    height: 38px;
+}
+
+.nav-link:hover{
+    background:rgba(238,193,10,0.7);
+    border-radius:8px;
+}
+
+.nav-link {
+    padding-right:50px;
 }

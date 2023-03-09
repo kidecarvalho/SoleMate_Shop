@@ -1,0 +1,171 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<SoleMate.Data.StripeSettings> Stripe
+
+
+@model CartViewModel
+
+@{
+    ViewData["Title"] = "Cart Overview";
+}
+
+<!--Shipping Info-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Shipping Details Address Form</title>
+    <style>
+        /* CSS styles for the form */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Shipping Details Address Form</h1>
+        <form id="shippingForm" action="" method="post">
+
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
+
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required />
+
+            <input type="text" id="addressLine1" name="addressLine1" placeholder="Address Line 1" required />
+
+            <input type="text" id="addressLine2" name="addressLine2" placeholder="Address Line 2" />
+
+            <input type="text" id="city" name="city" required placeholder="City">
+
+            <input type="text" id="state" name="state" placeholder="State / City" required />
+
+            <input type="text" id="zipCode" name="zipCode" placeholder="Postal / Zip Code" required />
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select a country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="MX">Mexico</option>
+            </select>
+
+            @*
+            <input type="submit" value="Submit" />
+            *@
+        </form>
+
+        <div id="errorDiv"></div>
+    </div>
+
+    <script>
+        // JavaScript code for form validation
+        const shippingForm = document.getElementById("shippingForm");
+        const errorDiv = document.getElementById("errorDiv");
+
+        shippingForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            errorDiv.innerHTML = "";
+
+            const firstName = document.getElementById("firstName");
+            const lastName = document.getElementById("lastName");
+            const addressLine1 = document.getElementById("addressLine1");
+            const city = document.getElementById("city");
+            const state = document.getElementById("state");
+            const zipCode = document.getElementById("zipCode");
+            const country = document.getElementById("country");
+
+            if (firstName.value.trim
+                                if (firstName.value.trim() === "") {
+                    errorDiv.innerHTML += "<p class='error'>Please enter a first name.</p>";
+                }
+
+            if (lastName.value.trim() === "") {
+                errorDiv.innerHTML += "<p class='error'>Please enter a last name.</p>";
+            }
+
+            if (addressLine1.value.trim() === "") {
+                errorDiv.innerHTML +=
+                    "<p class='error'>Please enter an address for Address Line 1.</p>";
+            }
+
+            if (city.value.trim() === "") {
+                errorDiv.innerHTML += "<p class='error'>Please enter a city.</p>";
+            }
+
+            if (state.value.trim() === "") {
+                errorDiv.innerHTML += "<p class='error'>Please enter a state.</p>";
+            }
+
+            if (zipCode.value.trim() === "") {
+                errorDiv.innerHTML += "<p class='error'>Please enter a zip code.</p>";
+            }
+
+            if (country.value === "") {
+                errorDiv.innerHTML += "<p class='error'>Please select a country.</p>";
+            }
+
+            if (errorDiv.innerHTML === "") {
+                // If there are no errors, submit the form
+                shippingForm.submit();
+            }
+        });
+    </script>
+
+
+    <!--End of Shipping Info Section-->
+
+    <div class="text-center">
+        <form asp-action="Processing" asp-controller="Checkout" method="post">
+            <article>
+                <label class="pb-3">Amount: CAD$ @Math.Round(@Model.GrandTotal/100, 2, MidpointRounding.AwayFromZero).ToString("F2")</label>
+
+            </article>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="@Stripe.Value.PublishableKey"
+                    data-amount="@ViewBag.Total"
+                    data-name="[SoleMate]"
+                    data-description="Sneakers Payment"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="en"
+                    data-zip-code="true">
+            </script>
+        </form>
+    </div>
+
+</body>
